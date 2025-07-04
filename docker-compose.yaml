@@ -1,0 +1,9 @@
+services:
+  esphome:
+    container_name: esphome
+    image: esphome/esphome
+    volumes:
+      - ./:/config:rw
+    restart: always
+    ports:
+      - "6052:6052"
