@@ -6,13 +6,6 @@ esp8266:
 
 logger:
 
-mqtt:
-    broker: m4.wqtt.ru
-    username: u_22CB7M
-    password: IX13JGAW
-    port: 14446
-    id: mqtt_slavijan
-
 ota:
   platform: esphome
 
