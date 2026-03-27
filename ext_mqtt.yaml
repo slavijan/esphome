@@ -19,6 +19,8 @@ wifi:
       password: !secret wifi_password
     - ssid: !secret wifi_dacha_ssid
       password: !secret wifi_dacha_password
+    - ssid: !secret wifi_home_ssid
+      password: !secret wifi_home_password
 
 captive_portal:
 
