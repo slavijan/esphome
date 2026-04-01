@@ -35,6 +35,24 @@ web_server:
   port: 80
   local: True
 
+remote_transmitter:
+  pin: GPIO0
+  carrier_duty_percent: 50%
+
+climate:
+  - platform: midea_ir
+    name: "Kentatsu 25m2"
+    sensor: room_temperature
+    supports_heat: true
+    visual:
+      min_temperature: 18 °C
+      max_temperature: 30 °C
+      temperature_step: 1 °C
+    mode_state_topic: climate_mode_state
+    mode_command_topic: climate_mode_command
+    target_temperature_state_topic: climate_target_temperature_state
+    target_temperature_command_topic: climate_target_temperature_command
+
 time:
   - platform: sntp
     timezone: UTC-07
@@ -48,6 +66,7 @@ sensor:
   - platform: dallas_temp
     name: temperature_1
     update_interval: 60s
+    id: room_temperature
 
 text_sensor:
   - platform: template
