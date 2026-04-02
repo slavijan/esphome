@@ -1,0 +1,16 @@
+time:
+  - platform: sntp
+    timezone: UTC-07
+    id: sntp_time
+
+text_sensor:
+  - platform: template
+    name: "Current time"
+    update_interval: 60s
+    id: time_text
+    lambda: |-
+      char str[17];
+      time_t currTime = id(sntp_time).now().timestamp;
+      strftime(str, sizeof(str), "%c", localtime(&currTime));
+      id(time_text).publish_state(str);
+      return {str};
