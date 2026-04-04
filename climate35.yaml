@@ -1,6 +1,6 @@
 substitutions:
-  name: ext
-  friendly_name: "Ext"
+  name: climate35
+  friendly_name: "Climate 35m2"
 
 packages:
   - !include common/relay-module-switch-mqtt.yaml
@@ -36,7 +36,9 @@ web_server:
   local: True
 
 remote_transmitter:
-  pin: GPIO0
+  pin:
+    number: GPIO0
+    inverted: true
   carrier_duty_percent: 50%
 
 climate:
@@ -71,7 +73,7 @@ sensor:
 text_sensor:
   - platform: template
     name: "Current time"
-    update_interval: 10s
+    update_interval: 60s
     id: time_text
     lambda: |-
       char str[17];
