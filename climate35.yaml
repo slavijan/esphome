@@ -43,7 +43,7 @@ remote_transmitter:
 
 climate:
   - platform: midea_ir
-    name: "Kentatsu 25m2"
+    name: "Kentatsu 35m2"
     sensor: room_temperature
     supports_heat: true
     visual:
@@ -54,6 +54,8 @@ climate:
     mode_command_topic: climate_mode_command
     target_temperature_state_topic: climate_target_temperature_state
     target_temperature_command_topic: climate_target_temperature_command
+    fan_mode_state_topic: climate_fan_mode_state
+    fan_mode_command_topic: climate_fan_mode_command
 
 time:
   - platform: sntp
