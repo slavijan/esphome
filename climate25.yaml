@@ -64,6 +64,8 @@ climate:
     mode_command_topic: climate25/mode_command
     target_temperature_state_topic: climate25/target_temperature_state
     target_temperature_command_topic: climate25/target_temperature_command
+    fan_mode_state_topic: climate25/fan_mode_state
+    fan_mode_command_topic: climate25/fan_mode_command
 
 # Captive portal – opens a configuration page when clients connect
 captive_portal:
